@@ -1,0 +1,41 @@
+#
+#Created by Administrator on 2016/7/12.
+#USER: Suhuaqiang
+#
+#YML格式,注意':'后有空格
+debug: true
+spring:
+    datasource:
+        #配置多个数据源
+        doubles_blog:
+            url: jdbc:mysql://localhost:3306/blog
+            username: root
+            password: 1234
+            driver-class-name: com.mysql.jdbc.Driver
+            maxActive: 20
+            initialSize: 1
+            maxWait: 60000
+            minIdle: 1
+            maxIdle: 20
+
+#配置redis
+redis:
+    #host: 192.168.100.120
+    host: 192.168.1.204
+    #password: 1234567890
+    password: 123456
+    port: 6379 # connection port
+    pool.max-idle: 8 # pool settings ...
+    pool.min-idle: 0
+    pool.max-active: 8
+    pool.max-wait: -1
+
+#配置端口
+server:
+    port: 8088
+    context-path: /
+
+#配置restTemplate参数
+simpleClientHttpRequestFactory:
+    readTimeout: 3000
+    ConnectTimeout: 3000
